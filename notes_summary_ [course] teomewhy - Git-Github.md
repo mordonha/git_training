@@ -32,12 +32,12 @@
 
 ## 2. Primeiros comandos
 ### linha de comando - git bash
-- **ls**: lista arquivos dentro do diretorio de trablho
+- **ls**: lista arquivos dentro do diretorio de trablho -> **dir** no windows;
     - **ls -a**: lista arquivos ocultos do direotiro
     - **ls <dir> <param etc>**: lista o conteudo do diretorio nivel abaixo, sem precisar acessar 
 - **cd <diretorio>**: move entre diretorios
 - **pwd**: retorna o caminho absoluto (path) do diretorio de trabalho
-- **clear** ou **ctrl+L**: limpa as informações do terminal
+- **clear** ou **ctrl+L**: limpa as informações do terminal -> **cls** no windows
 - **mkdir** : cria novo diretorio no diretorio atual
 - **mv <"arquivo"> <dir>**: move o arquivo do repo atua para o repo abaixo -> atenção que ele faz uma copia
 - **cat <arquivo>** :mostra o que tem dentro do arquivo
