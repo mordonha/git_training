@@ -56,7 +56,6 @@
 - **git add <file or .>**: adiciona arquivos para a pasta .git/ do working diretory -> stage
     - **git ls-files --stage**: dentro do diretorio .git/, podemos ver os arquivos indexados para o stage do git
  
-- **git commit -m <"mensagem">**: cada commit possui identificar unico, mudando cada mudança do arquivo-alvo;
 - **git log** : ver o log dos commits feitos na branch do repo
     - **git log -1** : ver log do ultimo commit
  
