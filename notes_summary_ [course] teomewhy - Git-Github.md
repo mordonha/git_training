@@ -31,7 +31,7 @@
 - versionamento x arvore de commits: precisamos de atenção para salvar alterações na arvore de nós com uso de versoes do commit para andar pelos nós/versões;
 
 ## 2. Primeiros comandos
-### linha de comando - git bash
+### linha de comando - shell/bash/terminal
 - **ls**: lista arquivos dentro do diretorio de trablho -> **dir** no windows;
     - **ls -a**: lista arquivos ocultos do direotiro
     - **ls <dir> <param etc>**: lista o conteudo do diretorio nivel abaixo, sem precisar acessar 
