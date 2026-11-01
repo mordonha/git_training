@@ -72,6 +72,7 @@
 - **git reset <file>** : rollback do stage dos arquivos adicionados por git add
 - **git checkout -b <nome da branch>**
 - git branch : lista das branches do projeto
+- git checkout <branch>: muda para branch selecionada
 
 ---
 
