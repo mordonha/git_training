@@ -82,6 +82,8 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 ## 4. Resolução de conflitos
 - Conflitos acontecem quando arquivos em branches diferentes se encontram com alterações feitas no mesmo arquivo e nas mesmas linhas em suas branches e no momento de mesclar;
 - podemos resolver os conflitos de diversas formas, geralmente editando o arquivo e escolhendo qual alteração fica e qual não > aceitando e decidindo alterações mergeadas e depois git add + git commit;
+- Podemos mesclar a main com a branch de interesse para atualziar com a main, ou vice-versa para ajudar na diminuição de conflito para a main das alterações da branch, mas os conflitos estarão a ser resolvidos na branch, logicamengte;
+- Decisões de integridade da main geralmente são associadas a main ser a versão do projeto que estara em deploy (produção/PROD);
 ---
 
 
