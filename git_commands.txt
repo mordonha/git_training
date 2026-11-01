@@ -1,0 +1,9 @@
+1. git init
+2. git status
+3. git add <file>
+4. git commit -m <msn.
+5. git log
+6. git diff <file>
+7. git reset <file>
+8. git checkout -b <branch>
+9. git config --global user.email <email>
