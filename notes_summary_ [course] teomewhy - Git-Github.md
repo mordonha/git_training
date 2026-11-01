@@ -49,12 +49,13 @@
 
 #### extra
 - **git config --global init.defaultBranch main**
-- **git branch -M main**: renomeia a branch atual, no caso 'master > main'
+- **git branch -m main**: renomeia a branch atual, no caso 'master > main'
 
 ### git - comandos de versionamento !
 - **git status**: nome de branch atual - commits - tracked/untracked files - sugestoes
 - **git add <file or .>**: adiciona arquivos para a pasta .git/ do working diretory -> stage
     - **git ls-files --stage**: dentro do diretorio .git/, podemos ver os arquivos indexados para o stage do git
+- **git commit -M "<sobre o commit>"**
  
 - **git log** : ver o log dos commits feitos na branch do repo
     - **git log -1** : ver log do ultimo commit
