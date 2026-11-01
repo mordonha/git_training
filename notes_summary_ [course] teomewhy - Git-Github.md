@@ -66,7 +66,7 @@
 - **git config --global user.email <"email">**
 - **git config --global user.name <"nome do user">**
 
-## 2. Branches
+## 3. Branches
 
 Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças entre ramos e mescla de alterações 
 
@@ -78,6 +78,9 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - **git merge <branch>**: mescla a branch com a branch atual;
 - **git branch -d nome-da-branch** : apaga a branch;
 
+
+## 4. Resolução de conflitos
+- Conflitos acontecem quando arquivos em branches diferentes se encontram com alterações feitas no mesmo arquivo em suas branches e no momento de mesclar;
 ---
 
 
