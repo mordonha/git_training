@@ -54,8 +54,11 @@
 ### git - comandos de versionamento !
 - **git status**: nome de branch atual - commits - tracked/untracked files - sugestoes
 - **git add <file or .>**: adiciona arquivos para a pasta .git/ do working diretory -> stage
+    - git add <file>: arquivo focal;
+    - git add . : todos os arquivos do working diretory atual
+    - git add file* / git add *.txt : todos os arquivos que iniciam com 'file' ou finalizam com certo tipo de arquivo;
     - **git ls-files --stage**: dentro do diretorio .git/, podemos ver os arquivos indexados para o stage do git
-- **git commit -M "<sobre o commit>"**
+- **git commit -M "<msn>"**
  
 - **git log** : ver o log dos commits feitos na branch do repo
     - **git log -1** : ver log do ultimo commit
@@ -63,8 +66,10 @@
 - **git config --global user.email <"email">**
 - **git config --global user.name <"nome do user">**
 
+## 2. Branches
 
-
+- **git diff <file>**: mostra o que foi alterado em cada commit realizado no arquivo em questão;
+- **git reset <file>** : rollback do stage dos arquivos adicionados por git add
 
 
 ---
