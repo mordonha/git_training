@@ -68,7 +68,7 @@
 
 ## 2. Branches
 
-Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças entre ramos e mescla de alterações
+Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças entre ramos e mescla de alterações 
 
 - **git diff <file>**: mostra o que foi alterado em cada commit realizado no arquivo em questão;
 - **git reset <file>** : rollback do stage dos arquivos adicionados por git add
@@ -76,6 +76,7 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - **git branch** : lista das branches do projeto
 - **git checkout <branch>**: muda para branch selecionada
 - **git merge <branch>**: mescla a branch com a branch atual;
+- **git branch -d nome-da-branch** : apaga a branch;
 
 ---
 
