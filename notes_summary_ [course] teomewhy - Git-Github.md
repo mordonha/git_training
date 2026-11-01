@@ -73,6 +73,7 @@
 - **git checkout -b <nome da branch>**
 - **git branch** : lista das branches do projeto
 - **git checkout <branch>**: muda para branch selecionada
+- **git merge <branch>**: mescla a branch com a branch atual;
 
 ---
 
