@@ -42,6 +42,8 @@
 - **mv <"arquivo"> <dir>**: move o arquivo do repo atua para o repo abaixo -> atenção que ele faz uma copia
 - **cat <arquivo>** :mostra o que tem dentro do arquivo
 - **rm -rf <dir>**: exclui um diretorio -> atenção se ha arquivos dentro dele
+- **echo '<MSN>' >> <nome e tipo do file>** : cria um arquivo contendo a mensagem digitada;
+- **touch <nome e tipo do file>**: cria um arquivo apenas
 
 ### git - comandos iniciais
 - **git init .** : promove o diretorio de trabalho em um repositorio git, embrulha o direotrio dentro d euma pasta invisivel do git
