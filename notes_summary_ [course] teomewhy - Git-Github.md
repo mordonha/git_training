@@ -115,6 +115,8 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - Um outro ponto é a realização do hard fork, uma pratica de clonar um repositorio qualqquer, e manter o ponteiro do upstream associado ao repositorio clonado, para trazer dele alterações quando necessarias, para seu trabalho, com os creditos de autoria do dono repositorio remoto, mas com total liberdade de merge na main do usuairo que realizou o clone. Mantendo essa pratica para alterar repositorios livremente, sem esquecer atribuições pertinentes aos autores; entre outras menções sobre o conteudo -> lembrando que plagio e não reconheicmento de autoria configura ilegalidades, bem como certas proteções de licenças aplicadas ao codigo produzido para aquele remositorio remoto.
 - O Fork é pensado em uma etica de colaboração no desenvolvimento de projetos, e o hard fork de criatividade, estudos!
 - git pull origin <branch/main>: um comando apreendido que ajuda na atualziação de novas branches com conteudo da main para iniciar trabalho local sobre o que ja se sem na branch main -> podemos trazer conteudos de outras branchs tambem a depender do que se pretene trabalhar no projeto -> geralmente usamos quando fazemos um checkout da main local que esta desatualizada quanto à remota. Depois resolvemos conflitos de merge da melhor forma quando necessario;
+- syn do fork: ação pela interface do github que possibilita atualizar o fork com alterações merge autorizadas pelo dono, mantendo a branch main atualizada após a data de fork;
+
 
 ### Fluxo de trabalho Git local
 
