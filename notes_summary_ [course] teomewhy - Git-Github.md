@@ -109,6 +109,12 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 
 - **git fetch <repo>** : voce recebe as branches do repo remoto
 
+## 6. Fork
+- Quando forkeamos um repositorio remoto, e depois clanamos ele, é de boa pratica, que se crie uma branch nova para trabalho, pois depois, o conteudo alterado será enviado (git push) para essa nova branch remota pertencente ao usuario que realizou o fork, e então o conteudo podera ser enviado como um pull request para que o dono do repositorio o qual aplicamos o fork possa decidir o merge com sua branch main, avaliando as alterações propostas.
+- Logicamente, em seu fork, após o git push da branch do direotio local, mantera uma branch com suas alterações também, mas ainda a mains necessita de autorização do dono do repo remoto;
+- Um outro ponto é a realização do hard fork, uma pratica de clonar um repositorio qualqquer, e manter o ponteiro do upstream associado ao repositorio clonado, para trazer dele alterações quando necessarias, para seu trabalho, com os creditos de autoria do dono repositorio remoto, mas com total liberdade de merge na main do usuairo que realizou o clone. Mantendo essa pratica para alterar repositorios livremente, sem esquecer atribuições pertinentes aos autores; entre outras menções sobre o conteudo -> lembrando que plagio e não reconheicmento de autoria configura ilegalidades, bem como certas proteções de licenças aplicadas ao codigo produzido para aquele remositorio remoto.
+- O Fork é pensado em uma etica de colaboração no desenvolvimento de projetos, e o hard fork de criatividade, estudos!
+- git pull origin <branch/main>: um comando apreendido que ajuda na atualziação de novas branches com conteudo da main para iniciar trabalho local sobre o que ja se sem na branch main -> podemos trazer conteudos de outras branchs tambem a depender do que se pretene trabalhar no projeto
 ---
 
 
