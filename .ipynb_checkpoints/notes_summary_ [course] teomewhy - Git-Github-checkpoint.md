@@ -79,11 +79,26 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - **git branch -d nome-da-branch** : apaga a branch;
 
 
-## 4. Resolução de conflitos
-- Conflitos acontecem quando arquivos em branches diferentes se encontram com alterações feitas no mesmo arquivo e nas mesmas linhas em suas branches e no momento de mesclar;
-- podemos resolver os conflitos de diversas formas, geralmente editando o arquivo e escolhendo qual alteração fica e qual não > aceitando e decidindo alterações mergeadas e depois git add + git commit;
+## 4. Resolução de conflitos - aprovação de versões de merge à main
+- Conflitos acontecem quando arquivos em branches diferentes se encontram com **alterações feitas no mesmo arquivo e nas mesmas linhas** em suas branches e no momento de mesclar;
+- podemos resolver os conflitos de diversas formas, geralmente editando o arquivo e escolhendo qual alteração fica e qual não > **aceitando e decidindo alterações mergeadas e depois git add + git commit na branch main/focal**;
 - Podemos mesclar a main com a branch de interesse para atualziar com a main, ou vice-versa para ajudar na diminuição de conflito para a main das alterações da branch, mas os conflitos estarão a ser resolvidos na branch, logicamengte;
 - Decisões de integridade da main geralmente são associadas a main ser a versão do projeto que estara em deploy (produção/PROD);
+
+## 5. Pull Request (PR)
+- Repositorios remotos > 'origin' são hospedados em uma nuvem proprietarias como 'github' ou 'gitlab' ou 'bitbucket';
+- podemos criar repositorios remotos e sincornizar com nossos repositorios git locais (maquina);
+- todo o historico de commits são sincornizados no repo remoto;
+
+- **git clone <http path do repo remoto> <working diretory>**: clone do repositorio remoto, criando repo local para uso e copia de arquivos; podemos sincornizar via SSH tambem.
+
+- **git remote add origin** <http remoto repo>
+    - REPO LOCAL NÃO EXISTE: **echo "MSN" >> READ.md > git init > git add README.md > git commit -m '<MSN>' > git branch -M main > git remote add origin <link repo>: > git push -u origin main**: apos o fluxo imediatamente acima;
+    - REPO LOCAL EXISTE: **git remote add origin <link http do repo remoto> > git branch -M main > git push -u origin main**: quando o repo ja existe no local e no remoto, conectando os dois;
+
+- **git remote -v** : lista as origin para o repo remoto;
+- **git push <origin> <branch>**: envia a branch nomeada para o repo remoto linkado na origin; main para main, branch para branch de mesmo nome
+
 ---
 
 
@@ -157,9 +172,9 @@ Após commitar as alterações feitas em uma branch, ao mudar para outra, voce p
 A qualquer momento voce pode trazer os dados de uma branch para outra com o git merge, a depender das etapas e interações do seu trabalho (user story, hotfix, production version, etc).
 A depender do andamento do ponteiro de commit das branches, um merge pode significar a criação de um commit merge para unificar branches, ou pode ser necessário a resolução de conflitos, com escolha de mudanças, git add (staging area) e então git commit com as mudanças finais.
 
-- **git merge <nome da branch à trazer as alterações>**: mergea na branch onde se chamou o comando, as alterações da branch chamada, logo, o ponteiro das 2 branchs apontam para o mesmo ultimo commit
+- **git merge <nome da branch à trazer as alterações>**: mesclar na branch onde se chamou o comando, as alterações da branch chamada, logo, o ponteiro das 2 branchs apontam para o mesmo ultimo commit
 - git branch -d <branch>: apaga a branch, geralmente utilizado após merge com a master/main/primary.
-- git mergetool : ferramenta visual para resolução de conflitos de merge
+- **git mergetool** : ferramenta visual para resolução de conflitos de merge
 
 Trabalhar com ferramentas online remotas de git, como github, traz beneficios como gerenciamento e agregação de repositórios na nuvem. 
 Crie uma conta em um website, como github, e crie seu repositório e siga as instruções ou conecte com seu repositório working directory local, tambem.
