@@ -158,6 +158,10 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 12. git checkout main
 13. git branch -D <nova_branch>
 
+## 7. Integração com VS Code
+
+
+
 ---
 
 
