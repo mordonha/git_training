@@ -105,7 +105,9 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - Após enviarmos para nosso repositorio remoto, precisamos realizar o merge de nossas brac=nches, quando quisermos, na interface do github, onde criamos um PUL REQUEST das alterações de uma origin d euma branch para a branch principal (main), e em seguida, realziarmos o merge tambpem na interface do github
 - Agentes IA generativa geralmente conseguem fazer esse fluxo automatizado quando com acesso de credenciais de nossa conta remota e com as credenciais de autoria nossa da platafroma;
 - Todo esse trabalho afeta apenas a atualização do repo remoto;
-- **git pull origin <main/branch>** -> aqui trazemos as alterações mergeados do remoto ou da branch que queremos para nosso trabalgo local, atualizando nosso diretorio de trabalho de nossa maquina;
+- **git pull origin <main/branch>** -> aqui trazemos as alterações mergeados do remoto ou da branch que queremos para nosso trabalho local, atualizando nosso diretorio de trabalho de nossa maquina;
+
+- **git fetch <repo>** : voce recebe as branches do repo remoto
 
 ---
 
