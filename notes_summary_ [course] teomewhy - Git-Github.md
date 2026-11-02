@@ -174,6 +174,15 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - possui integração com repositorio remoto
 - source controul tool -> barra de histroico de branches e commits
 
+## 8. Git flow - conventional commits
+
+- conventional commits: conversões/padrões de nomenclatura de commits para fluxo de trabalho em projetos de versionamento de código;
+- Não apenas commits, como também de branches de trabalho
+  - main
+  - develop
+  - docs/README
+  - feat/xxx
+
 ---
 
 # GIT: ferramenta de controle de versão
