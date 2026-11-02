@@ -115,6 +115,47 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - Um outro ponto é a realização do hard fork, uma pratica de clonar um repositorio qualqquer, e manter o ponteiro do upstream associado ao repositorio clonado, para trazer dele alterações quando necessarias, para seu trabalho, com os creditos de autoria do dono repositorio remoto, mas com total liberdade de merge na main do usuairo que realizou o clone. Mantendo essa pratica para alterar repositorios livremente, sem esquecer atribuições pertinentes aos autores; entre outras menções sobre o conteudo -> lembrando que plagio e não reconheicmento de autoria configura ilegalidades, bem como certas proteções de licenças aplicadas ao codigo produzido para aquele remositorio remoto.
 - O Fork é pensado em uma etica de colaboração no desenvolvimento de projetos, e o hard fork de criatividade, estudos!
 - git pull origin <branch/main>: um comando apreendido que ajuda na atualziação de novas branches com conteudo da main para iniciar trabalho local sobre o que ja se sem na branch main -> podemos trazer conteudos de outras branchs tambem a depender do que se pretene trabalhar no projeto -> geralmente usamos quando fazemos um checkout da main local que esta desatualizada quanto à remota. Depois resolvemos conflitos de merge da melhor forma quando necessario;
+
+### Fluxo de trabalho Git local
+
+01. git checkout -b <nova-branch>
+02. cria ou atualiza arquivos
+03. git status
+04. git add *arquivos*
+05. git status
+06. git commit -m "minha mensagem"
+07. git checkout main
+08. git merge nova_branch
+
+### Fluxo de trabalho GitHub <> Local (projeto próprio ou da sua empresa)
+01. git clone <endereco do projeto>
+02. git checkout -b <nova_branch>
+03. alterações de arquivos
+04. git status
+05. git add *arquivos*
+06. git status
+07. git commit -m "nova mensagem"
+08. git push origin <nova_branch>
+09. abrir Pull request no GitHub para main
+10. excluir <nova_branch> origin
+11. git checkout main
+12. git branch -D <nova_branch>
+
+### Fluxo de trabalho GitHub <> Local (projetos open-source)
+01. Fork do projeto para seu próprio github
+02. git clone <endereco do projeto fork>
+03. git checkout -b <nova_branch>
+04. alterações de arquivos
+05. git status
+06. git add *arquivos*
+07. git status
+08. git commit -m "nova mensagem"
+09. git push origin <nova_branch>
+10. abrir Pull request no GitHub da branch fork para a main do projeto original
+11. excluir <nova_branch> origin
+12. git checkout main
+13. git branch -D <nova_branch>
+
 ---
 
 
