@@ -172,6 +172,7 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 
 - possui integração automatica com versionamento git local: tracking de alterações (modified/stage/unstage)
 - possui integração com repositorio remoto
+- source controul tool -> barra de histroico de branches e commits
 
 ---
 
