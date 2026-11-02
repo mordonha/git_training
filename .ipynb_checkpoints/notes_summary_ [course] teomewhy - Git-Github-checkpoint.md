@@ -101,6 +101,10 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 - **git remote -v** : lista as origin para o repo remoto;
 - **git push <origin> <branch>**: envia a branch nomeada para o repo remoto linkado na origin; main para main, branch para branch de mesmo nome
 
+- o fluxo agora é podermos utilizar o git push como comando para atualizarmos as branches de nosso repositorio remoto para andar junto com as alterações feitas em nosso diretorio local
+- Após enviarmos para nosso repositorio remoto, precisamos realizar o merge de nossas brac=nches, quando quisermos, na interface do github, onde criamos um PUL REQUEST das alterações de uma origin d euma branch para a branch principal (main), e em seguida, realziarmos o merge tambpem na interface do github
+- Agentes IA generativa geralmente conseguem fazer esse fluxo automatizado quando com acesso de credenciais de nossa conta remota e com as credenciais de autoria nossa da platafroma;
+
 ---
 
 
