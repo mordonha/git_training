@@ -185,6 +185,8 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 
 - se faz pertinente termos uma branch de desenvolvimento espelhada com a mais e onde todas as outras branches aplicaram suas mesclas (git merge), sendo essa a **develop**, que sera a então utilizada para o merge com a main e o processo de pull request;
 
+## 9. GitKeep / GitIgnore
+
 ---
 
 # GIT: ferramenta de controle de versão
