@@ -1,16 +1,20 @@
-# TEOMEWHY - GIT/GITHUB
+# TEOMEWHY - GIT & GITHUB 2025
 
-1. Instalação e primeiros conceitos
-2. Primeiros comandos
-3. Branches
-4. Resolução de conflitos
-5. Pull Request (PR)
-6. Fork
-7. Integração com VS Code
-8. Git flow
-9. GitKeep / GitIgnore
+ref: [**TeoMeWhy - Introdução ao Git e Github**](https://www.youtube.com/watch?v=Y_fFZjzw-D4&list=PLvlkVRRKOYFQyKmdrassLNxkzSMM6tcSL)
 
-## 1. Instalação e primeiros conceitos (commit)
+## SUMMARY
+
+1. [**Instalação e primeiros conceitos**](#1-instalação-e-primeiros-conceitos-commit-tree)
+2. [**Primeiros comandos**](#2-primeiros-comandos)
+3. [**Branches**](#3-branches)
+4. [**Resolução de conflitos**](#4-resolução-de-conflitos---aprovação-de-versões-de-merge-à-main)
+5. [**Pull Request (PR)**](#5-pull-request-pr)
+6. [**Fork**](#6-fork)
+7. [**Integração com VS Code**](#7-integração-com-vs-code)
+8. [**Git flow**](#8-git-flow---conventional-commits)
+9. [**GitKeep / GitIgnore**](#9-gitignore--gitkeep)
+
+## 1. Instalação e primeiros conceitos (commit tree)
 
 - Software para gerenciamento de versão de arquivos de texto;
 - Git é um software instalavel em qualquer plataforma -> open source (criado por Linux Tovards);
