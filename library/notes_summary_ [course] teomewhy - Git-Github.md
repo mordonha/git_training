@@ -185,7 +185,14 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 
 - se faz pertinente termos uma branch de desenvolvimento espelhada com a mais e onde todas as outras branches aplicaram suas mesclas (git merge), sendo essa a **develop**, que sera a então utilizada para o merge com a main e o processo de pull request;
 
-## 9. GitKeep / GitIgnore
+## 9. GitIgnore / GitKeep
+
+- **.gitignore**: arquivo nativo do git, onde há descrição dos arquivos que não irão sofrar alterações de versionamento pelo git, sendo ignorado pela ferramenta para staged e tracking de alterações.
+  - projetificação: Geralmente, mantenho documentado nele arquivos que não são de texto manipulaveis pelo git ou ferramentas comuns de edição de texto/código, ou arquivos de execução globais ao projeto
+  - segurança: Uma forma de proteger certos arquivos de versionamento durante trabalho colaborativo também;
+
+- **.gitkeep**: arquivo que sinaliza para o git que tal diretorio precisa se manter durante o processo de versionamento, como novas branches.
+  - projetificação: Comumente, mantemos ele junto a diretorios onde há arquivos definidos no **.gitigonre** para que ele continue junto ao projeto em versionamentos futuros e não se perca a integridade da hieararquia de arquivos do mesmo em clones, forks e outras ações solicitadas para ignorar; "Pastas vazias também improtam"".
 
 ---
 
