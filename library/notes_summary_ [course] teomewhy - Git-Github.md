@@ -189,6 +189,7 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 
 - **.gitignore**: arquivo nativo do git, onde há descrição dos arquivos que não irão sofrar alterações de versionamento pelo git, sendo ignorado pela ferramenta para staged e tracking de alterações.
   - projetificação: Geralmente, mantenho documentado nele arquivos que não são de texto manipulaveis pelo git ou ferramentas comuns de edição de texto/código, ou arquivos de execução globais ao projeto
+    - dados: não se versiona dados com o git, logo extensões de arquivos de dados, habitualmente, são ignoradas durante processo de versionamento (diretorio 'data' com .csv, .xls, .xlsx);
   - segurança: Uma forma de proteger certos arquivos de versionamento durante trabalho colaborativo também;
 
 - **.gitkeep**: arquivo que sinaliza para o git que tal diretorio precisa se manter durante o processo de versionamento, como novas branches.
