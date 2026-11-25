@@ -1,16 +1,20 @@
-# TEOMEWHY - GIT/GITHUB
+# TEOMEWHY - GIT & GITHUB 2025
 
-1. Instalação e primeiros conceitos
-2. Primeiros comandos
-3. Branches
-4. Resolução de conflitos
-5. Pull Request (PR)
-6. Fork
-7. Integração com VS Code
-8. Git flow
-9. GitKeep / GitIgnore
+ref: [**TeoMeWhy - Introdução ao Git e Github**](https://www.youtube.com/watch?v=Y_fFZjzw-D4&list=PLvlkVRRKOYFQyKmdrassLNxkzSMM6tcSL)
 
-## 1. Instalação e primeiros conceitos (commit)
+## SUMMARY
+
+1. [**Instalação e primeiros conceitos**](#1-instalação-e-primeiros-conceitos-commit-tree)
+2. [**Primeiros comandos**](#2-primeiros-comandos)
+3. [**Branches**](#3-branches)
+4. [**Resolução de conflitos**](#4-resolução-de-conflitos---aprovação-de-versões-de-merge-à-main)
+5. [**Pull Request (PR)**](#5-pull-request-pr)
+6. [**Fork**](#6-fork)
+7. [**Integração com VS Code**](#7-integração-com-vs-code)
+8. [**Git Flow**](#8-git-flow---conventional-commits)
+9. [**GitKeep / GitIgnore**](#9-gitignore--gitkeep)
+
+## 1. Instalação e primeiros conceitos (commit tree)
 
 - Software para gerenciamento de versão de arquivos de texto;
 - Git é um software instalavel em qualquer plataforma -> open source (criado por Linux Tovards);
@@ -185,7 +189,15 @@ Gestão de alterações entre arquvios e bracnhes -> versionamento e mudanças e
 
 - se faz pertinente termos uma branch de desenvolvimento espelhada com a mais e onde todas as outras branches aplicaram suas mesclas (git merge), sendo essa a **develop**, que sera a então utilizada para o merge com a main e o processo de pull request;
 
-## 9. GitKeep / GitIgnore
+## 9. GitIgnore / GitKeep
+
+- **.gitignore**: arquivo nativo do git, onde há descrição dos arquivos que não irão sofrar alterações de versionamento pelo git, sendo ignorado pela ferramenta para staged e tracking de alterações.
+  - projetificação: Geralmente, mantenho documentado nele arquivos que não são de texto manipulaveis pelo git ou ferramentas comuns de edição de texto/código, ou arquivos de execução globais ao projeto
+    - dados: não se versiona dados com o git, logo extensões de arquivos de dados, habitualmente, são ignoradas durante processo de versionamento (diretorio 'data' com .csv, .xls, .xlsx);
+  - segurança: Uma forma de proteger certos arquivos de versionamento durante trabalho colaborativo também;
+
+- **.gitkeep**: arquivo que sinaliza para o git que tal diretorio precisa se manter durante o processo de versionamento, como novas branches.
+  - projetificação: Comumente, mantemos ele junto a diretorios onde há arquivos definidos no **.gitigonre** para que ele continue junto ao projeto em versionamentos futuros e não se perca a integridade da hieararquia de arquivos do mesmo em clones, forks e outras ações solicitadas para ignorar; "Pastas vazias também improtam"".
 
 ---
 

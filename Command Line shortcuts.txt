@@ -1,0 +1,24 @@
+=== COMMAND LINE SHORTCUTS ===
+
+command line keys and wildcards
+
+- wsl: altera para Ububuntu shell
+
+- pwd: print working directory
+- . : sign (dot) to refer to current working directory
+- cd : change directory command (absolute and relative paths)
+- $env:USERPROFILE: equivalente a ~/ de Linux (PS C:\> cd $env:USERPROFILE)
+- $env : acesso a variáveis de ambiente do powershell
+
+- echo: echo the follow text
+- cat: concatenar arquivos para a saída de texto
+- ls: list the files and directories
+- rmdir: delete files and dir
+- mkdir: create dir
+- > : sing to change the output text to a file; redirection
+- >> : sign to appended output text to a file
+- * : mark to zero to more chacacters after
+- ? : mark to one to more diferentes singles chacaters
+- mv: move files and dir command (name, path to dir path)
+- cp: copy the file path to the destination dir path (or other file to be create in the stallment)
+
