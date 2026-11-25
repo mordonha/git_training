@@ -291,7 +291,10 @@ Convenção semântica para padronizar mensagens de commit, facilitar a leitura 
 - **`style:`** Ajustes de formatação que não alteram a lógica do código (espaços, indentação, ponto e vírgula).
 - **`refactor:`** Refatoração de código que não corrige bug nem adiciona nova funcionalidade.
 - **`perf:`** Alterações focadas em melhoria de performance.
-- **`chore:`** Atualizações de tarefas de build, configurações, scripts ou dependências.
+- **`build:`** Atualizações de tarefas de build, configurações, scripts ou dependências.
+- **`chore:`** Mudanças no projeto que não afetam o sistema ou arquivos de testes. Mudanças de desenvolvimento. (ex: atualização de .gitignore, adicionar prettier)
+- **`test:`** Criação ou alteração de códigos de teste (ex: criação de testes unitários)
+- **`revert:`** Indica a reversão de um commit anterior
 
 ### Organização de Branches (Modelo Git Flow)
 
