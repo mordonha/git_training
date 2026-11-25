@@ -250,7 +250,7 @@ O Visual Studio Code possui integração nativa e visual com o Git através da a
 
 ## 8. Git Flow e Conventional Commits
 
-> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
+> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow) | [Commitlint](https://github.com/conventional-changelog/commitlint)
 
 ### Estrutura Completa de um Commit
 
@@ -313,6 +313,35 @@ Convenção semântica para padronizar mensagens de commit, facilitar a leitura 
   - `feat/<nome-da-funcionalidade>` (ex: `feat/cheatsheets`)
   - `fix/<nome-da-correcao>`
   - `docs/<nome-da-documentacao>` (ex: `docs/notas-de-estudos`)
+
+### Commitlint
+
+Ferramenta para validação de mensagens de commits sobre o padrão Conventional Commits.
+
+**Git Flow - CI/CD**
+
+- Para projetos especificos, criar arquivo de config dentro do repositorio de trabalho do projeto para estabelecer regras especificas de commits para aquele git flow, se for o caso.
+- Para validação global, instalação no repositroio raiz da sua maquina dá conta do uso padronizado em todas validações via terminal
+
+- **Instalação no working diretory (com npm / Windows)**
+
+```text
+npm install -D @commitlint/cli @commitlint/config-conventional
+
+# Here we use the node command to avoid encoding issue on Windows.
+
+node -e "fs.writeFileSync('commitlint.config.js', process.argv[1])" "export default { extends: ['@commitlint/config-conventional'] };"
+
+# ou, caso conflito no ES module do Node, edite conteúdo do commitlint.config.js para:
+# module.exports = { extends: ['@commitlint/config-conventional'] };
+
+```
+
+- **Exemplo de uso (sem configuração de hooks / husky):**
+
+  ```text
+  echo "mensagem do commit que se deseja validar" | npx commitlint
+  ```
 
 ---
 
