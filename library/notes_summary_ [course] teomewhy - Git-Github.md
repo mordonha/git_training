@@ -11,7 +11,7 @@ ref: [**TeoMeWhy - Introdução ao Git e Github**](https://www.youtube.com/watch
 5. [**Pull Request (PR)**](#5-pull-request-pr)
 6. [**Fork**](#6-fork)
 7. [**Integração com VS Code**](#7-integração-com-vs-code)
-8. [**Git flow**](#8-git-flow---conventional-commits)
+8. [**Git Flow**](#8-git-flow---conventional-commits)
 9. [**GitKeep / GitIgnore**](#9-gitignore--gitkeep)
 
 ## 1. Instalação e primeiros conceitos (commit tree)
