@@ -344,6 +344,16 @@ echo "mensagem do commit que se deseja validar" | npx commitlint
 
 > **Nota sobre hooks:** Para ver como configurar hooks (como o Husky) e automatizar a validação no fluxo de commit, acesse a documentação oficial em [https://commitlint.js.org/guides/local-setup.html](https://commitlint.js.org/guides/local-setup.html).
 
+### Commitizen
+
+Ferramenta para construção de commits de forma iterativa, seguindo o Conventional Commits
+
+#### Intatalação (npm)
+
+```bash
+npm install -g commitizen
+```
+
 ---
 
 ## 9. GitIgnore e GitKeep
