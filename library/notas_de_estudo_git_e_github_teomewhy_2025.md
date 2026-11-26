@@ -251,7 +251,7 @@ O Visual Studio Code possui integração nativa e visual com o Git através da a
 
 ## 8. Git Flow e Conventional Commits
 
-> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow) | [Commitlint](https://github.com/conventional-changelog/commitlint)
+> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow) | [Commitlint](https://github.com/conventional-changelog/commitlint) | []Commitizen](https://github.com/commitizen/cz-cli)
 
 ### Estrutura Completa de um Commit
 
@@ -343,6 +343,22 @@ echo "mensagem do commit que se deseja validar" | npx commitlint
 ```
 
 > **Nota sobre hooks:** Para ver como configurar hooks (como o Husky) e automatizar a validação no fluxo de commit, acesse a documentação oficial em [https://commitlint.js.org/guides/local-setup.html](https://commitlint.js.org/guides/local-setup.html).
+
+### Commitizen
+
+Ferramenta para construção de commits de forma iterativa, seguindo o Conventional Commits
+
+#### Intatalação (npm)
+
+```bash
+npm install -g commitizen
+```
+
+Uso (O comando invoca o git commit após a finalização da interface):
+
+```bash
+git cz
+```
 
 ---
 
