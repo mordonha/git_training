@@ -1,2 +1,5 @@
- *.pdf
- *.js
+*.pdf
+*.js
+.husky/
+node_modules/
+*.json
