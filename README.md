@@ -32,3 +32,7 @@ _(Caso queira testar sem instalar no projeto, o `npx` pode baixar/executar tempo
 echo "feat: adiciona nova funcionalidade" | npx commitlint
 echo "mensagem fora do padrao" | npx commitlint
 ```
+
+---
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)

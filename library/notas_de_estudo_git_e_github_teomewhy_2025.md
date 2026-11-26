@@ -251,7 +251,7 @@ O Visual Studio Code possui integração nativa e visual com o Git através da a
 
 ## 8. Git Flow e Conventional Commits
 
-> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow) | [Commitlint](https://github.com/conventional-changelog/commitlint)
+> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow) | [Commitlint](https://github.com/conventional-changelog/commitlint) | []Commitizen](https://github.com/commitizen/cz-cli)
 
 ### Estrutura Completa de um Commit
 
@@ -352,6 +352,12 @@ Ferramenta para construção de commits de forma iterativa, seguindo o Conventio
 
 ```bash
 npm install -g commitizen
+```
+
+Uso (O comando invoca o git commit após a finalização da interface):
+
+```bash
+git cz
 ```
 
 ---
