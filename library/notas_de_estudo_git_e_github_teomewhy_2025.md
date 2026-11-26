@@ -316,32 +316,32 @@ Convenção semântica para padronizar mensagens de commit, facilitar a leitura 
 
 ### Commitlint
 
-Ferramenta para validação de mensagens de commits sobre o padrão Conventional Commits.
+Ferramenta para validação de mensagens de commits seguindo o padrão **Conventional Commits**.
 
-**Git Flow - CI/CD**
+#### Git Flow e CI/CD
 
-- Para projetos especificos, criar arquivo de config dentro do repositorio de trabalho do projeto para estabelecer regras especificas de commits para aquele git flow, se for o caso.
-- Para validação global, instalação no repositroio raiz da sua maquina dá conta do uso padronizado em todas validações via terminal
+- **Regras por projeto:** para projetos específicos, crie o arquivo de configuração dentro do diretório de trabalho do repositório para definir regras de commit próprias daquele fluxo/projeto, quando necessário.
+- **Uso global no terminal:** a instalação no diretório base do usuário na máquina atende validações padronizadas via terminal fora de um projeto específico.
 
-- **Instalação no working diretory (com npm / Windows)**
+#### Instalação no working directory (com `npm` / Windows)
 
-```text
+```bash
 npm install -D @commitlint/cli @commitlint/config-conventional
 
-# Here we use the node command to avoid encoding issue on Windows.
-
+# Usa o Node para evitar problemas de encoding no Windows
 node -e "fs.writeFileSync('commitlint.config.js', process.argv[1])" "export default { extends: ['@commitlint/config-conventional'] };"
 
-# ou, caso conflito no ES module do Node, edite conteúdo do commitlint.config.js para:
+# Caso ocorra conflito/aviso de ES module no Node, altere o conteúdo de commitlint.config.js para:
 # module.exports = { extends: ['@commitlint/config-conventional'] };
-
 ```
 
-- **Exemplo de uso (sem configuração de hooks / husky):**
+#### Exemplo de uso (sem configuração de hooks / Husky)
 
-  ```text
-  echo "mensagem do commit que se deseja validar" | npx commitlint
-  ```
+```bash
+echo "mensagem do commit que se deseja validar" | npx commitlint
+```
+
+> **Nota sobre hooks:** Para ver como configurar hooks (como o Husky) e automatizar a validação no fluxo de commit, acesse a documentação oficial em [https://commitlint.js.org/guides/local-setup.html](https://commitlint.js.org/guides/local-setup.html).
 
 ---
 
