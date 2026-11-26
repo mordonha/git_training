@@ -106,6 +106,7 @@
   - `git ls-files --stage`: Lista os arquivos indexados atualmente na área de _staging_ (`.git/index`).
   - `git reset <arquivo>`: Retira o arquivo do _stage_ (rollback do `git add`), mantendo as alterações no arquivo local.
   - `git rm <arquivo>`: Remove o arquivo do rastreamento do Git e do diretório (use `-f` para forçar caso já esteja no _stage_).
+  - `git rm --cached <arquivo>`: Remove o arquivo do rastreamento do git
 - **Registro e Histórico:**
   - `git commit -m "<mensagem>"`: Salva os arquivos do _stage_ no histórico do repositório com uma mensagem descritiva.
   - `git commit -v`: Abre o editor padrão exibindo o _diff_ completo das alterações para redigir a mensagem.
