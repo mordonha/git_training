@@ -106,6 +106,7 @@
   - `git ls-files --stage`: Lista os arquivos indexados atualmente na área de _staging_ (`.git/index`).
   - `git reset <arquivo>`: Retira o arquivo do _stage_ (rollback do `git add`), mantendo as alterações no arquivo local.
   - `git rm <arquivo>`: Remove o arquivo do rastreamento do Git e do diretório (use `-f` para forçar caso já esteja no _stage_).
+  - `git rm --cached <arquivo>`: Remove o arquivo do rastreamento do git
 - **Registro e Histórico:**
   - `git commit -m "<mensagem>"`: Salva os arquivos do _stage_ no histórico do repositório com uma mensagem descritiva.
   - `git commit -v`: Abre o editor padrão exibindo o _diff_ completo das alterações para redigir a mensagem.
@@ -250,7 +251,7 @@ O Visual Studio Code possui integração nativa e visual com o Git através da a
 
 ## 8. Git Flow e Conventional Commits
 
-> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow)
+> **Referências:** [Conventional Commits v1.0.0](https://www.conventionalcommits.org/pt-br/v1.0.0/) | [Atlassian - Gitflow Workflow](https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow) | [Commitlint](https://github.com/conventional-changelog/commitlint)
 
 ### Estrutura Completa de um Commit
 
@@ -291,7 +292,10 @@ Convenção semântica para padronizar mensagens de commit, facilitar a leitura 
 - **`style:`** Ajustes de formatação que não alteram a lógica do código (espaços, indentação, ponto e vírgula).
 - **`refactor:`** Refatoração de código que não corrige bug nem adiciona nova funcionalidade.
 - **`perf:`** Alterações focadas em melhoria de performance.
-- **`chore:`** Atualizações de tarefas de build, configurações, scripts ou dependências.
+- **`build:`** Atualizações de tarefas de build, configurações, scripts ou dependências.
+- **`chore:`** Mudanças no projeto que não afetam o sistema ou arquivos de testes. Mudanças de desenvolvimento. (ex: atualização de .gitignore, adicionar prettier)
+- **`test:`** Criação ou alteração de códigos de teste (ex: criação de testes unitários)
+- **`revert:`** Indica a reversão de um commit anterior
 
 ### Organização de Branches (Modelo Git Flow)
 
@@ -310,6 +314,35 @@ Convenção semântica para padronizar mensagens de commit, facilitar a leitura 
   - `feat/<nome-da-funcionalidade>` (ex: `feat/cheatsheets`)
   - `fix/<nome-da-correcao>`
   - `docs/<nome-da-documentacao>` (ex: `docs/notas-de-estudos`)
+
+### Commitlint
+
+Ferramenta para validação de mensagens de commits seguindo o padrão **Conventional Commits**.
+
+#### Git Flow e CI/CD
+
+- **Regras por projeto:** para projetos específicos, crie o arquivo de configuração dentro do diretório de trabalho do repositório para definir regras de commit próprias daquele fluxo/projeto, quando necessário.
+- **Uso global no terminal:** a instalação no diretório base do usuário na máquina atende validações padronizadas via terminal fora de um projeto específico.
+
+#### Instalação no working directory (com `npm` / Windows)
+
+```bash
+npm install -D @commitlint/cli @commitlint/config-conventional
+
+# Usa o Node para evitar problemas de encoding no Windows
+node -e "fs.writeFileSync('commitlint.config.js', process.argv[1])" "export default { extends: ['@commitlint/config-conventional'] };"
+
+# Caso ocorra conflito/aviso de ES module no Node, altere o conteúdo de commitlint.config.js para:
+# module.exports = { extends: ['@commitlint/config-conventional'] };
+```
+
+#### Exemplo de uso (sem configuração de hooks / Husky)
+
+```bash
+echo "mensagem do commit que se deseja validar" | npx commitlint
+```
+
+> **Nota sobre hooks:** Para ver como configurar hooks (como o Husky) e automatizar a validação no fluxo de commit, acesse a documentação oficial em [https://commitlint.js.org/guides/local-setup.html](https://commitlint.js.org/guides/local-setup.html).
 
 ---
 

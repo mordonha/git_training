@@ -1,1 +1,6 @@
- *.pdf
+*.pdf
+*.js
+.husky/
+node_modules/
+*.json
+.ipynb_checkpoints/
