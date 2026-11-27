@@ -106,7 +106,3 @@ npx semantic-release --dry-run
 - MICROSOFT / VISUAL STUDIO CODE. **Using Git source control in VS Code**. Visual Studio Code Documentation, [s. d.]. Disponível em: <https://code.visualstudio.com/docs/sourcecontrol/overview>. Acesso em: 26 nov. 2026.
 - PRESTON-WERNER, Tom. **Semantic Versioning 2.0.0**. [S. l.], [s. d.]. Disponível em: <https://semver.org/>. Acesso em: 26 nov. 2026.
 - TEOMEWHY. **Introdução ao Git e GitHub**. YouTube, [s. d.]. Playlist. Disponível em: <https://www.youtube.com/watch?v=Y_fFZjzw-D4&list=PLvlkVRRKOYFQyKmdrassLNxkzSMM6tcSL>. Acesso em: 26 nov. 2026.
-
-```[cite: 8, 9]
-
-```
