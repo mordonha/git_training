@@ -285,6 +285,83 @@ O `git push origin <branch>` não envia _tags_ por padrão; é necessário envi�
   git push origin --delete v1.0.0
   ```
 
+### Semantic Release (Versionamento e Releases Automatizados)
+
+O **Semantic Versioning (SemVer)** ([https://semver.org/](https://semver.org/)) padroniza versões no formato `MAJOR.MINOR.PATCH` (`X.Y.Z`) para indicar o impacto das mudanças no código ou projeto. Combinado com _Conventional Commits_, ele calcula automaticamente o próximo número de versão (`feat:` → _minor_, `fix:` → _patch_, _breaking change_ → _major_), cria a `git tag` e gera as notas de lançamento.
+
+#### Instalação e setup rápido
+
+Para usar o `semantic-release` sem publicar pacotes no registro público do npm (ideal para repositórios de estudos, notas ou releases apenas no GitHub), configure o `.releaserc.json` definindo explicitamente os _plugins_ desejados (ressaltando que a execução exige autenticação via token do GitHub com permissão de escrita em _Contents_):
+
+```json
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github"
+  ]
+}
+```
+
+- **Execução sob demanda via `npx`:** pode ser rodado com `npx semantic-release` sem precisar manter dependências pesadas versionadas no projeto (mantendo arquivos locais de configuração fora do remoto via `.gitignore`, se preferir o repositório limpo).
+
+#### Uso na `main` com `npx semantic-release`
+
+O `semantic-release` avalia o histórico a partir da `main` (e da última _tag_ existente) para decidir se há _commits_ elegíveis para gerar uma nova versão:
+
+- **Simular sem alterar tags ou remoto (`--dry-run`):**
+  ```bash
+  npx semantic-release --dry-run
+  ```
+- **Publicar versão, `git tag` e Release no GitHub:**
+
+  ```bash
+  npx semantic-release
+  ```
+
+- _Commits_ como `docs:`, `chore:` ou _merges_ isolados não disparam _release_ sozinhos; quando houver `feat:`, `fix:` ou _breaking change_ na `main`, a ferramenta calcula a nova versão SemVer e cria a _tag_ e a _release_ automaticamente.
+
+#### Automação em CI/CD com GitHub Actions e YAML
+
+Para não depender de rodar manualmente na máquina local, você pode automatizar o fluxo na nuvem usando **GitHub Actions** com arquivos de _workflow_ em **YAML** (`.yml`) dentro de `.github/workflows/` — lembrando que **YAML** é apenas um formato de arquivo para configuração.
+
+Exemplo de `.github/workflows/release.yml` disparado no _push_ da `main`:
+
+```yaml
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          npx --yes semantic-release@25
+          --branches main
+          --plugins @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/github
+```
+
 ---
 
 ## 7. Integração com VS Code
