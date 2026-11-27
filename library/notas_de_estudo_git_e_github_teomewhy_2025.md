@@ -234,6 +234,57 @@ Repositórios remotos são versões do projeto hospedadas em servidores na nuvem
 8. Após aprovação, excluir `<nova-branch>` no seu fork remoto e sincronizar sua `main` (`Sync fork`)
 9. No terminal local: `git checkout main` → `git pull origin main` → `git branch -d <nova-branch>`
 
+### Git Tag (Marcadores de Versão e Releases)
+
+> **Nota de Engenharia de Software:** `git tag` não é um escopo de ramificação do **Git Flow** (que organiza branches como `main`, `develop`, `feature/*`, `release/*` e `hotfix/*`), mas costuma acompanhar o ciclo de _release_ para marcar versões estáveis (ex.: `v1.0.0`) sobre commits específicos.
+
+#### Comandos essenciais
+
+- **Listar tags existentes:**
+  ```bash
+  git tag
+  ```
+- **Criar uma tag leve (aponta diretamente para o commit atual):**
+  ```bash
+  git tag v0.1.0
+  ```
+- **Criar uma tag anotada (recomendada para versões/releases, registra autor, data e mensagem):**
+  ```bash
+  git tag -a v1.0.0 -m "Versão inicial estável"
+  ```
+- **Criar uma tag apontando para um commit específico:**
+  ```bash
+  git tag -a v0.2.0 <hash-do-commit> -m "Marco anterior"
+  ```
+- **Inspecionar detalhes de uma tag anotada:**
+  ```bash
+  git show v1.0.0
+  ```
+
+#### Envio para o remoto
+
+O `git push origin <branch>` não envia _tags_ por padrão; é necessário enviá-las explicitamente:
+
+- **Enviar uma tag específica para o remoto:**
+  ```bash
+  git push origin v1.0.0
+  ```
+- **Enviar todas as tags locais para o remoto:**
+  ```bash
+  git push origin --tags
+  ```
+
+#### Remoção de tags
+
+- **Apagar uma tag local:**
+  ```bash
+  git tag -d v1.0.0
+  ```
+- **Apagar uma tag no repositório remoto:**
+  ```bash
+  git push origin --delete v1.0.0
+  ```
+
 ---
 
 ## 7. Integração com VS Code
@@ -299,9 +350,14 @@ Convenção semântica para padronizar mensagens de commit, facilitar a leitura 
 
 ### Organização de Branches (Modelo Git Flow)
 
-- **Branches principais:**
-  - **`main`:** Reflete o código estável em **produção**. Recebe merges apenas de versões testadas e aprovadas.
-  - **`develop`:** Branch principal de desenvolvimento. Funciona como espelho da `main` onde novas entregas são integradas e testadas antes de irem para produção.
+- **Branches principais (permanentes):**
+  - **`main`:** Reflete o código estável em **produção**. Recebe merges apenas de versões testadas e aprovadas (vindas de `release/*` ou `hotfix/*`), geralmente acompanhadas de uma `git tag` de versão.
+  - **`develop`:** Branch principal de desenvolvimento e integração. Reúne as novas entregas já concluídas e validadas antes de serem preparadas para ir para produção.
+
+- **Branches de suporte (temporárias):**
+  - **`feature/`:** Criada a partir da `develop` para desenvolver uma nova funcionalidade ou melhoria isolada. Ao ser concluída, retorna via merge/PR para a `develop` e é excluída.
+  - **`release/`:** Criada a partir da `develop` quando um conjunto de funcionalidades está pronto para ser publicado (ex.: `release/v1.2.0`). Serve para ajustes finais, correções leves de homologação e atualização de versão/changelog; ao finalizar, é mesclada tanto na `main` (gerando a _tag_ de lançamento) quanto de volta na `develop`.
+  - **`hotfix/`:** Criada diretamente a partir da `main` para corrigir rapidamente um bug crítico encontrado em produção (ex.: `hotfix/corrige-login`). Após a correção, é mesclada tanto na `main` (gerando nova _tag_ de _patch_) quanto na `develop` para manter as branches sincronizadas.
 
 - **Padrão detalhado em 3 partes (categoria + entrega + código da tarefa):**
   1. **Tipo/categoria da branch:** `docs`, `feat`, `fix`, `perf`, `refactor`.
