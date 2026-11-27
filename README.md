@@ -1,65 +1,90 @@
-# Curso TMW Git & GitHub - Notas de Estudo
+# Git & GitHub Training Lab: Engenharia de Versionamento, CI/CD e Notas de Estudos
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Repositório dedicado aos estudos de controle de versionamento com **Git** (`git version 2.56.0.windows.3`) e hospedagem colaborativa no **GitHub**.
+Laboratório prático e repositório de estudos dedicado a controle de versão com **Git** (`git version 2.56.0.windows.3`), colaboração no **GitHub**, padronização de histórico e automação de releases.
 
-O material acompanha a trilha principal do curso **TeoMeWhy — Introdução ao Git e GitHub**, complementada por documentação oficial e práticas de engenharia de software voltadas à padronização de histórico, _branches_ e versionamento (`Git Flow`, `Conventional Commits`, `Commitlint`, `Commitizen`, `Git Tag` e `semantic-release`).
+A base conceitual acompanha a trilha do curso **TeoMeWhy — Introdução ao Git e GitHub**, expandida para um ambiente de prática (_Training Lab_) com **Git Flow**, **Conventional Commits**, **Commitlint**, **Commitizen**, **Git Tag**, **Semantic Versioning (SemVer)**, **semantic-release** e **CI/CD com GitHub Actions**.
 
 ---
 
 ## Sumário
 
-1. [Sobre o Repositório e Escopo de Estudos](#sobre-o-repositório-e-escopo-de-estudos)
-2. [Conteúdo Abordado nas Notas](#conteúdo-abordado-nas-notas)
-3. [Ferramentas de Padronização e Versionamento](#ferramentas-de-padronização-e-versionamento)
-4. [Referências](#referências)
+1. [Sobre o Training Lab](#sobre-o-training-lab)
+2. [Estrutura do Repositório](#estrutura-do-repositório)
+3. [Trilha de Estudos e Notas](#trilha-de-estudos-e-notas)
+4. [Fluxo Prático: Padronização, Versionamento e CI/CD](#fluxo-prático-padronização-versionamento-e-cicd)
+5. [Referências](#referências)
+6. [Licença](#licença)
 
 ---
 
-## Sobre o Repositório e Escopo de Estudos
+## Sobre o Training Lab
 
-- **Base do curso:** A estrutura central segue as aulas do canal **TeoMeWhy**, cobrindo desde comandos essenciais de terminal e Git até colaboração remota com _Pull Requests_ e _Forks_.
-- **Aprofundamentos complementares:** Ao longo das anotações, foram incorporadas referências externas (como o _Pro Git Book_, _GitHub Docs_, _Atlassian_ e _SemVer_) e práticas de padronização e automação (`Commitizen`, `Commitlint`, `Husky`, `Git Tag` e `semantic-release`).
-- **Organização local e remota:** Arquivos e dependências auxiliares de ambiente/automação podem ser mantidos fora do rastreamento remoto via `.gitignore` para preservar o repositório limpo, enquanto configurações de _workflow_ em CI/CD (como GitHub Actions) podem ser versionadas conforme a necessidade.
+- **Do estudo à prática de engenharia:** Vai além de anotações passivas ao servir como espaço de experimentação para comandos, _branches_, resolução de conflitos, _Pull Requests_, _forks_ e automação de entregas.
+- **Base teórica estruturada:** As anotações completas ficam em `library/notas_de_estudo_git_e_github_teomewhy_2025.md`, funcionando como caderno de consulta e referência rápida do laboratório.
+- **Higiene do repositório e automação:** Arquivos locais ou dependências auxiliares podem ficar fora do rastreamento remoto via `.gitignore` para preservar o repositório limpo, enquanto configurações de _workflow_ em CI/CD (como GitHub Actions) organizam a automação na `main`.
 
 ---
 
-## Conteúdo Abordado nas Notas
+## Estrutura do Repositório
 
-As anotações completas estão organizadas em `library/notas_de_estudo_git_e_github_teomewhy_2025.md` e cobrem:
+A organização abaixo reflete a estrutura do repositório e os arquivos locais auxiliares mantidos fora do rastreamento via `.gitignore`:
+
+```text
+git_training/
+├── .github/
+│   └── workflows/
+│       └── release.yml                                # Pipeline de CI/CD para versionamento e releases na main
+├── library/
+│   ├── presentation/
+│   │   └── .gitkeep                                   # Preserva o diretório vazio no Git (PDFs locais ignorados via .gitignore)
+│   ├── git_commands.txt                               # Consulta rápida de comandos Git
+│   └── notas_de_estudo_git_e_github_teomewhy_2025.md  # Caderno completo de estudos e referências
+├── .gitignore                                         # Regras de exclusão de arquivos locais, PDFs e dependências
+├── .releaserc.json                                    # (Local / ignorado) Configuração do semantic-release para simulações
+├── Command Line shortcuts.txt                         # Atalhos e comandos essenciais de terminal
+└── README.md                                          # Visão geral do Training Lab e guia de uso
+```
+
+---
+
+## Trilha de Estudos e Notas
+
+O material completo em `library/notas_de_estudo_git_e_github_teomewhy_2025.md` está organizado em nove módulos:
 
 1. **Instalação e primeiros conceitos (`commit tree`):** configuração inicial (`user.name`, `user.email`, `init.defaultBranch`, `core.editor`), área de _staging_ e árvore de commits.
 2. **Primeiros comandos:** navegação no terminal (Shell/Bash), inicialização, inspeção (`status`, `diff`, `log`) e ciclo de vida de alterações (`add`, `reset`, `rm`, `commit`, `revert`).
 3. **Branches:** criação, navegação (`switch` / `checkout`), mesclagem (`merge`) e limpeza de ramificações.
-4. **Resolução de conflitos:** identificação de marcadores de conflito e boas práticas antes do _merge_ na `main`.
-5. **Pull Request (PR):** repositórios remotos (`origin`), sincronização (`push`, `fetch`, `pull`) e fluxo de revisão.
-6. **Fork, Fluxos de Trabalho, Git Tag e Semantic Release:** diferença entre _Fork_ e _Hard Fork_, fluxos local/próprio/open-source (`upstream`), _tags_ leves e anotadas (`git tag`), versionamento semântico (`SemVer`), execução do `semantic-release` com `.releaserc.json` (`--dry-run` e publicação na `main`) e automação em CI/CD com GitHub Actions e YAML.
-7. **Integração com VS Code:** uso da aba _Source Control_, visualização de _diffs_ e resolução interativa de conflitos.
-8. **Git Flow e Conventional Commits:** anatomia da mensagem de commit, tipos semânticos, convenção de _branches_ (_main_, _develop_, _feature/_, _release/_, _hotfix/_) e validação/criação de commits com `Commitlint` e `Commitizen`.
-9. **`.gitignore` e `.gitkeep`:** regras de exclusão de arquivos locais/sensíveis e preservação de diretórios vazios.
+4. **Resolução de conflitos:** leitura de marcadores de conflito e boas práticas antes do _merge_ na `main`.
+5. **Pull Request (PR):** repositórios remotos (`origin`), sincronização (`push`, `fetch`, `pull`) e fluxo de revisão de código.
+6. **Fork, Fluxos de Trabalho, Git Tag e Semantic Release:** diferença entre _Fork_ e _Hard Fork_, fluxos local/próprio/open-source (`upstream`), _tags_ leves e anotadas (`git tag`), versionamento semântico (`SemVer`), simulação/publicação com `semantic-release` e `.releaserc.json`, e automação de CI/CD via GitHub Actions (YAML).
+7. **Integração com VS Code:** uso da aba _Source Control_, inspeção de _diffs_ e resolução interativa de conflitos.
+8. **Git Flow e Conventional Commits:** estrutura da mensagem de commit, tipos semânticos, convenção de _branches_ (_main_, _develop_, _feature/_, _release/_, _hotfix/_) e apoio de `Commitlint` e `Commitizen`.
+9. **`.gitignore` e `.gitkeep`:** exclusão de arquivos locais/sensíveis e manutenção de diretórios vazios no histórico.
 
 ---
 
-## Ferramentas de Padronização e Versionamento
+## Fluxo Prático: Padronização, Versionamento e CI/CD
 
-Para aplicar **Conventional Commits** e versionamento semântico na prática durante os estudos, o ambiente pode utilizar as ferramentas abaixo (com **Node.js/npm** instalado quando aplicável):
+Para exercitar a esteira de versionamento no laboratório (requer **Node.js/npm** onde aplicável):
 
-### 1. Commitizen (Construção interativa de commits)
+### 1. Construção guiada de commits com Commitizen
 
-Auxilia na montagem passo a passo das mensagens de commit no terminal sem precisar decorar todos os prefixos.
+Ajuda a montar mensagens no padrão **Conventional Commits** de forma interativa no terminal:
 
 ```bash
 # Instalação global do CLI e do adaptador convencional
 npm install -g commitizen cz-conventional-changelog
 
-# Uso após preparar os arquivos com git add
+# Execução após preparar os arquivos com git add
 git cz
 ```
 
-### 2. Commitlint (Validação de mensagens)
+### 2. Validação de mensagens com Commitlint
 
-Verifica se a mensagem de commit segue as regras do **Conventional Commits** antes de consolidar o registro.
+Verifica se a mensagem de commit atende às convenções antes de consolidar o registro:
 
 ```bash
 # Instalação das dependências de validação
@@ -70,12 +95,12 @@ echo "feat: adiciona nova funcionalidade" | npx commitlint
 echo "mensagem fora do padrao" | npx commitlint
 ```
 
-### 3. Semantic Release (Simulação e versão semântica)
+### 3. Simulação e release semântico com `semantic-release`
 
-Calcula versões no padrão `MAJOR.MINOR.PATCH` a partir dos commits na `main` usando um `.releaserc.json` (por exemplo, sem `@semantic-release/npm` para releases apenas no GitHub):
+Avalia commits na `main` segundo o **SemVer** (`MAJOR.MINOR.PATCH`) usando `.releaserc.json` (sem `@semantic-release/npm` para releases focadas no GitHub), podendo ser automatizado em `.github/workflows/release.yml` via GitHub Actions:
 
 ```bash
-# Simulação sem criar tags ou alterar o remoto
+# Simulação local sem criar tags nem alterar o remoto
 npx semantic-release --dry-run
 ```
 
@@ -106,3 +131,7 @@ npx semantic-release --dry-run
 - MICROSOFT / VISUAL STUDIO CODE. **Using Git source control in VS Code**. Visual Studio Code Documentation, [s. d.]. Disponível em: <https://code.visualstudio.com/docs/sourcecontrol/overview>. Acesso em: 26 nov. 2026.
 - PRESTON-WERNER, Tom. **Semantic Versioning 2.0.0**. [S. l.], [s. d.]. Disponível em: <https://semver.org/>. Acesso em: 26 nov. 2026.
 - TEOMEWHY. **Introdução ao Git e GitHub**. YouTube, [s. d.]. Playlist. Disponível em: <https://www.youtube.com/watch?v=Y_fFZjzw-D4&list=PLvlkVRRKOYFQyKmdrassLNxkzSMM6tcSL>. Acesso em: 26 nov. 2026.
+
+## Licença
+
+Este projeto está licenciado sob a **Licença MIT** — consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
