@@ -41,7 +41,7 @@ git_training/
 │   ├── presentation/
 │   │   └── .gitkeep                                   # Preserva o diretório vazio no Git (PDFs locais ignorados via .gitignore)
 │   ├── git_commands.txt                               # Consulta rápida de comandos Git
-│    ├── Command Line shortcuts.txt                     # Atalhos e comandos essenciais de terminal
+│   ├── Command Line shortcuts.txt                     # Atalhos e comandos essenciais de terminal
 │   └── notas_de_estudo_git_e_github_teomewhy_2025.md  # Caderno completo de estudos e referências
 ├── .gitignore                                         # Regras de exclusão de arquivos locais, PDFs e dependências
 ├── .releaserc.json                                    # (Local / ignorado) Configuração do semantic-release para simulações
