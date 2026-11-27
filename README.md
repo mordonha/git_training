@@ -1,4 +1,4 @@
-# Curso TMW Git & GitHub 2025 — Notas de Estudo
+# Curso TMW Git & GitHub - Notas de Estudo
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
@@ -33,7 +33,7 @@ As anotações completas estão organizadas em `library/notas_de_estudo_git_e_gi
 3. **Branches:** criação, navegação (`switch` / `checkout`), mesclagem (`merge`) e limpeza de ramificações.
 4. **Resolução de conflitos:** identificação de marcadores de conflito e boas práticas antes do merge na `main`.
 5. **Pull Request (PR):** repositórios remotos (`origin`), sincronização (`push`, `fetch`, `pull`) e fluxo de revisão.
-6. **Fork e Fluxos de Trabalho:** diferença entre _Fork_ e _Hard Fork_ e resumo prático dos fluxos local, corporativo/próprio e open-source (`upstream`).
+6. **Fork e Fluxos de Trabalho:** diferença entre _Fork_ e _Hard Fork_ e resumo prático dos fluxos local, corporativo/próprio e open-source (`upstream`), como também uso do Git Tag.
 7. **Integração com VS Code:** uso da aba _Source Control_, visualização de _diffs_ e resolução interativa de conflitos.
 8. **Git Flow e Conventional Commits:** anatomia da mensagem de commit, tipos semânticos, convenção de branches e automação com `Commitlint` e `Commitizen`.
 9. **`.gitignore` e `.gitkeep`:** regras de exclusão de arquivos locais/sensíveis e preservação de diretórios vazios.
